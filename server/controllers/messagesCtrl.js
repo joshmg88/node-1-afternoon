@@ -4,7 +4,7 @@ var id = 0;
 module.exports = {
   create: (req, res) => {
     messages.push({ text: req.body.text, time: req.body.time, id: id });
-    id++;
+    id += 1;
     res.status(200).send(messages);
   },
   read: (req, res) => {
@@ -21,7 +21,7 @@ module.exports = {
       text: text || message.text,
       time: message.time
     };
-    res.status(200).send(message);
+    res.status(200).send(messages);
   },
   delete: (req, res) => {
     const deleteID = req.params.id;

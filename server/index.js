@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const messagesCtrl = require("./controllers/messagesCtrl");
 const port = 3000;
 
+app.use(express.static(`./public/build`));
 app.use(bodyParser.json());
 
 app.post("/api/messages", messagesCtrl.create);
